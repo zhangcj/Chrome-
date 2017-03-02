@@ -1,0 +1,18 @@
+{
+  "name": "McAffee",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "McAffee",
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://www.autohome.com.cn/*"],
+      "js": ["script.js"]
+    }
+  ]
+}
+
+
+
