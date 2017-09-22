@@ -1,0 +1,37 @@
+﻿{
+  "name": "小馒头收藏夹书签",
+  "short_name": "小馒头书签",
+  "manifest_version": 2,
+  "version": "1.0.9",
+  "description": "小馒头书签，轻松随意打开书签",
+  "icons": 
+	{ 
+		"16": "ICON/default_icon_16.png",
+		"48": "ICON/default_icon_48.png",
+		"128": "ICON/default_icon_128.png"
+	},
+  "content_scripts": [
+    {
+      "matches": ["http://*/*"],
+      "js": ["Extend/jquery-2.1.0.min.js","Extend/Messenger.js","BookMark.js"],
+	  "run_at":"document_start",
+	  "all_frames": true
+    }
+  ],
+  "browser_action": {
+    "default_icon": "ICON/default_icon.png", 
+    "default_title": "点击显示收藏夹",
+	"default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "permissions": [
+    "tabs", "http://*/*","bookmarks","chrome://favicon/"
+  ],
+  "web_accessible_resources": [
+	"BookMark/sherpa/default.html",
+	"BookMark/sherpa/images/icons/grey/settings_2.png",
+	"chrome://favicon/"
+  ]
+}
